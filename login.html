@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <script type="module" src="js/login.js"></script>
 </head>
 <body>
     <h1>Login</h1>
-    <form>
-        <label for="senha">Senha:</label>
-        <input type="password" name="senha" id="senha" required>
-        <button type="submit">Entrar</button>
-    </form>
 
+    <label for="senha">Senha:</label>
+    <input id="senha" type="password" name="senha" required>
+    <button id="btn_login" type="submit">Entrar</button>
+    <p id="error"></p>
     <p>A senha é: SENHA123</p>
 </body>
 </html>
