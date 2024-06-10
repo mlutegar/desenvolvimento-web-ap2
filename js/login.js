@@ -5,7 +5,6 @@ const password = "senha123";
 const password_hash = hex_sha256(password);
 
 let body = document.body;
-let error = document.getElementById("error");
 
 const login = (password) => {
     function set_login() {
@@ -20,7 +19,7 @@ const login = (password) => {
     }
 
     console.log("Login fracassado");
-    conteudo(error, "Senha incorreta!")
+    error.innerHTML = "Senha incorreta";
     return false;
 };
 
@@ -45,5 +44,9 @@ if (sessionStorage.getItem("login")) {
             <p id="error"></p>
             <p>A senha é: SENHA123</p>
     `)
+
+    let error = document.getElementById("error");
+
     handleLogin();
+
 }

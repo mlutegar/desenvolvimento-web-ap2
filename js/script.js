@@ -7,4 +7,5 @@ const pegaDados = async (url) => {
     return await response.json();
 }
 
+
 export { conteudo, pegaDados };

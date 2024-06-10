@@ -81,6 +81,7 @@ const handleCardClick = (evento) => {
 
 const montaCard = (jogador) => {
     const card = document.createElement('article');
+    card.onclick = handleCardClick;
 
     card.innerHTML = `
         <h2>${jogador.nome}</h2>
@@ -102,7 +103,6 @@ const montaCard = (jogador) => {
     card.dataset.nomeCompleto = jogador.nome_completo;
     card.dataset.nascimento = jogador.nascimento;
     card.dataset.altura = jogador.altura;
-    card.onclick = handleCardClick;
 
     return card.outerHTML;
 }
@@ -111,10 +111,15 @@ const addCards = () => {
     let jogadoresDiv = document.getElementById("jogadores");
     jogadoresDiv.innerHTML = "";
     dadosJogadores.forEach(jogador => {
-        jogadoresDiv.innerHTML += montaCard(jogador);
-    })
+        const cardHTML = montaCard(jogador);
+        jogadoresDiv.insertAdjacentHTML('beforeend', cardHTML);
+    });
 
-}
+    // Adicionar event listeners aos novos cards
+    document.querySelectorAll('#jogadores article').forEach(card => {
+        card.onclick = handleCardClick;
+    });
+};
 
 if (!sessionStorage.getItem("login")) {
     conteudo(body, `
