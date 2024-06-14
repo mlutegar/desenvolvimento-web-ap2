@@ -1,4 +1,4 @@
-import {conteudo, pegaDados} from "./script.js";
+import {conteudo, pegaDados, informacaoJogador} from "./script.js";
 
 let body = document.body;
 let dadosJogadores = [];
@@ -83,26 +83,7 @@ const montaCard = (jogador) => {
     const card = document.createElement('article');
     card.onclick = handleCardClick;
 
-    card.innerHTML = `
-        <h2>${jogador.nome}</h2>
-        <p>${jogador.posicao}</p>
-        <p>${jogador.descricao}</p>
-        <img src="${jogador.imagem}" alt="${jogador.nome}">
-        <p>Elenco: ${jogador.elenco}</p>
-        <p>Nome completo: ${jogador.nome_completo}</p>
-        <p>Nascimento: ${jogador.nascimento}</p>
-        <p>Altura: ${jogador.altura}</p>
-    `;
-
-    card.dataset.id = jogador.id;
-    card.dataset.nome = jogador.nome;
-    card.dataset.posicao = jogador.posicao;
-    card.dataset.descricao = jogador.descricao;
-    card.dataset.imagem = jogador.imagem;
-    card.dataset.elenco = jogador.elenco;
-    card.dataset.nomeCompleto = jogador.nome_completo;
-    card.dataset.nascimento = jogador.nascimento;
-    card.dataset.altura = jogador.altura;
+    informacaoJogador(card, jogador);
 
     return card.outerHTML;
 }
@@ -129,18 +110,42 @@ if (!sessionStorage.getItem("login")) {
     handleLogin();
 } else {
     conteudo(body, `
-        <h1>Logado com sucesso!</h1>
-        <button id="btn_logout">Logout</button>
-        
-        <h2>Jogadores</h2>
-        <input id="search" type="text" placeholder="Buscar jogador">
-        
-        <h3>Filtros</h3>
-        <button id="btn_get_all">Mostrar todos os jogadores</button>
-        <button id="btn_get_masc">Mostrar jogadores masculinos</button>
-        <button id="btn_get_fem">Mostrar jogadores femininos</button>
-        
-        <div id="jogadores"></div>
+Absolutely! Here's the improved HTML structure, incorporating semantic tags and accessibility considerations:
+
+HTML
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogadores</title>
+  <link rel="stylesheet" href="style.css"> </head>
+<body>
+
+  <header> 
+    <p id="login-status">Logado com sucesso!</p>
+    <button id="btn_logout">Logout</button>
+  </header>
+
+  <main> 
+    <h2>Jogadores</h2>
+
+    <input id="search" type="search" placeholder="Buscar jogador" aria-label="Buscar jogador">
+
+    <section aria-labelledby="filter-heading">
+      <h3 id="filter-heading">Filtros</h3>
+      <button id="btn_get_all">Mostrar todos os jogadores</button>
+      <button id="btn_get_masc">Mostrar jogadores masculinos</button>
+      <button id="btn_get_fem">Mostrar jogadores femininos</button>
+    </section>
+
+    <div id="jogadores" role="region" aria-live="polite">
+      </div> 
+  </main>
+
+  <footer>
+    <p>Desenvolvido por: Michel Lutegar D'Orsi Pereira</p>
+  </footer>
     `
     )
 

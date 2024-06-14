@@ -1,0 +1,6 @@
+body {
+    font-family: sans-serif; /* Fonte moderna */
+    min-height: 100vh; /* Garante altura total da tela */
+    background-color: #f4f4f4; /* Cor de fundo suave */
+    margin: 0; /* Remove margens padrão */
+}
