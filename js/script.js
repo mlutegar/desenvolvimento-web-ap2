@@ -1,5 +1,36 @@
 const conteudo = (elemento, html) => {
-    elemento.innerHTML = html;
+    elemento.innerHTML += html;
+}
+
+const header = (header) => {
+    conteudo(header, `
+        <header class="navbar">
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+        <div class="login-info">
+            <p id="login-status">Logado com sucesso!</p>
+            <button id="btn_logout">Logout</button>
+        </div>
+    </header>
+    `
+    )
+}
+
+const footer = (footer) => {
+    conteudo(footer, `
+        <footer class="site-footer">
+        <div class="footer-content">
+            <p>Desenvolvido por: Michel Lutegar D'Orsi Pereira</p>
+            <p>Projeto de AP2 da disciplina de Desenvolvimento Web do IBMEC</p>
+            <p>Professor: Mangelo</p>
+            <img alt="Logo IBMEC" src="foto/ibmec.jpg" class="logo-ibmec">
+        </div>
+    </footer>
+    `
+    )
 }
 
 const pegaDados = async (url) => {
@@ -96,4 +127,4 @@ const informacaoJogador = (card, jogador, tipo) => {
 }
 
 
-export { conteudo, pegaDados, informacaoJogador };
+export { conteudo, pegaDados, informacaoJogador, footer, header };

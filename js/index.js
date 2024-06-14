@@ -1,4 +1,4 @@
-import {conteudo, pegaDados, informacaoJogador} from "./script.js";
+import {conteudo, pegaDados, informacaoJogador, header, footer} from "./script.js";
 
 let body = document.body;
 let dadosJogadores = [];
@@ -110,19 +110,8 @@ if (!sessionStorage.getItem("login")) {
     `)
     handleLogin();
 } else {
+    header(body);
     conteudo(body, `
-    <header class="navbar">
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Home</a></li>
-            </ul>
-        </nav>
-        <div class="login-info">
-            <p id="login-status">Logado com sucesso!</p>
-            <button id="btn_logout">Logout</button>
-        </div>
-    </header>
-
   <main class="main-content"> 
         <h2>Jogadores</h2>
 
@@ -141,12 +130,9 @@ if (!sessionStorage.getItem("login")) {
         <div id="jogadores" role="region" aria-live="polite">
         </div> 
     </main>
-
-  <footer>
-    <p>Desenvolvido por: Michel Lutegar D'Orsi Pereira</p>
-  </footer>
     `
     )
+    footer(body);
 
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach(button => {
