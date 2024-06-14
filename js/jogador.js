@@ -1,13 +1,36 @@
 import {informacaoJogador} from "./script.js";
 
 const body = document.body;
+const nav = document.createElement("nav");
+
+nav.innerHTML = `
+    <header class="navbar">
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+        <div class="login-info">
+            <p id="login-status">Logado com sucesso!</p>
+            <button id="btn_logout">Logout</button>
+        </div>
+    </header>
+`;
+
+body.appendChild(nav);
+
 const conteudo = document.createElement("div");
 body.appendChild(conteudo);
 
 const montaCardDetalhe = (jogador) => {
     const card = document.createElement("div");
     card.classList.add("card");
-    informacaoJogador(card, jogador);
+    informacaoJogador(card, jogador, "jogador");
+    card.innerHTML += `
+    <div class="btn-voltar">
+        <a href="../index.html" class="botao">Voltar</a>
+    </div>
+    `
     return card;
 }
 

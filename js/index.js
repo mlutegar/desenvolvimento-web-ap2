@@ -81,9 +81,10 @@ const handleCardClick = (evento) => {
 
 const montaCard = (jogador) => {
     const card = document.createElement('article');
+    card.classList.add('card');
     card.onclick = handleCardClick;
 
-    informacaoJogador(card, jogador);
+    informacaoJogador(card, jogador, "index");
 
     return card.outerHTML;
 }
@@ -110,44 +111,50 @@ if (!sessionStorage.getItem("login")) {
     handleLogin();
 } else {
     conteudo(body, `
-Absolutely! Here's the improved HTML structure, incorporating semantic tags and accessibility considerations:
+    <header class="navbar">
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+        </nav>
+        <div class="login-info">
+            <p id="login-status">Logado com sucesso!</p>
+            <button id="btn_logout">Logout</button>
+        </div>
+    </header>
 
-HTML
-<!DOCTYPE html>
-<html lang="pt-br"> 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogadores</title>
-  <link rel="stylesheet" href="style.css"> </head>
-<body>
+  <main class="main-content"> 
+        <h2>Jogadores</h2>
 
-  <header> 
-    <p id="login-status">Logado com sucesso!</p>
-    <button id="btn_logout">Logout</button>
-  </header>
+        <div class="search-bar">
+            <input id="search" type="search" placeholder="Buscar jogador" aria-label="Buscar jogador">
+            <button id="search-btn"><i class="fa fa-search"></i></button>
+        </div>
 
-  <main> 
-    <h2>Jogadores</h2>
+        <section aria-labelledby="filter-heading" class="filters">
+            <h3 id="filter-heading">Categorias</h3>
+            <button id="btn_get_all" class="filter-btn">Todos</button>
+            <button id="btn_get_masc" class="filter-btn">Masculino</button>
+            <button id="btn_get_fem" class="filter-btn">Feminino</button>
+        </section>
 
-    <input id="search" type="search" placeholder="Buscar jogador" aria-label="Buscar jogador">
-
-    <section aria-labelledby="filter-heading">
-      <h3 id="filter-heading">Filtros</h3>
-      <button id="btn_get_all">Mostrar todos os jogadores</button>
-      <button id="btn_get_masc">Mostrar jogadores masculinos</button>
-      <button id="btn_get_fem">Mostrar jogadores femininos</button>
-    </section>
-
-    <div id="jogadores" role="region" aria-live="polite">
-      </div> 
-  </main>
+        <div id="jogadores" role="region" aria-live="polite">
+        </div> 
+    </main>
 
   <footer>
     <p>Desenvolvido por: Michel Lutegar D'Orsi Pereira</p>
   </footer>
     `
     )
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            filterButtons.forEach(btn => btn.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
 
     handleLogout();
     handleInputSearch();

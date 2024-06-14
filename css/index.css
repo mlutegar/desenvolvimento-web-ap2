@@ -1,0 +1,144 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+.foto img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.conteudo {
+    padding: 16px;
+}
+
+.importante h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.importante p {
+    margin: 8px 0;
+    color: #666;
+}
+
+.info p {
+    margin: 16px 0 8px;
+    font-weight: bold;
+}
+
+.info ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info ul li {
+    margin: 4px 0;
+}
+
+.detalhes .botao {
+    display: inline-block;
+    padding: 10px 16px;
+    margin-top: 16px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.detalhes .botao:hover {
+    background-color: #0056b3;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-size: 1em;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+
+.search-bar button i {
+    font-size: 1.2em;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.filters h3 {
+    margin-right: 20px;
+}
+
+.filter-btn {
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #0056b3;
+}
+
+.filter-btn.selected {
+    background-color: #004494;
+    border-color: #004494;
+}
+
+#jogadores {
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}

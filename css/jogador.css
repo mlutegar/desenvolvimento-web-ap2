@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.perfil-jogador .container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.foto {
+    flex: 1;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.foto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.conteudo {
+    flex: 2;
+    padding: 20px;
+}
+
+.informacoes-principais {
+    text-align: left;
+}
+
+.informacoes-principais h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.informacoes-principais .posicao {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #666;
+}
+
+.informacoes-jogador {
+    margin: 20px 0;
+}
+
+.informacoes-jogador h2 {
+    margin-top: 0;
+}
+
+.informacoes-jogador ul {
+    list-style: none;
+    padding: 0;
+}
+
+.informacoes-jogador ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+.detalhes {
+    margin-top: 20px;
+}
+
+.detalhes h2 {
+    margin-top: 0;
+}
+
+.detalhes p {
+    font-size: 1.1em;
+}
