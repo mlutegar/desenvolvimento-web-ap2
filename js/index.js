@@ -3,14 +3,6 @@ import {conteudo, pegaDados, informacaoJogador, header, footer} from "./script.j
 let body = document.body;
 let dadosJogadores = [];
 
-const handleLogout = () => {
-    let btnLogout = document.getElementById("btn_logout");
-    btnLogout.onclick = () => {
-        sessionStorage.removeItem("login");
-        window.location.href = "login.html";
-    }
-}
-
 const handleLogin = () => {
     let btnLogin = document.getElementById("btn_login");
     btnLogin.onclick = () => {
@@ -105,14 +97,21 @@ const addCards = () => {
 
 if (!sessionStorage.getItem("login")) {
     conteudo(body, `
-        <h1>Você não está logado!</h1>
-        <button id="btn_login">Login</button>
+        <header></header>
+        <main>        
+        <div class="container">
+            <h1>Aviso!</h1>
+            <p>Você não está logado. Por favor, faça login para acessar esta página.</p>
+            <button id="btn_login">Login</button>
+        </div>       
+</main>
     `)
+    footer(body);
     handleLogin();
 } else {
     header(body);
     conteudo(body, `
-  <main class="main-content"> 
+  <main> 
         <h2>Jogadores</h2>
 
         <div class="search-bar">
@@ -142,7 +141,6 @@ if (!sessionStorage.getItem("login")) {
         });
     });
 
-    handleLogout();
     handleInputSearch();
     handleGetAll();
     handleGetMasc();

@@ -1,17 +1,24 @@
+const handleLogout = () => {
+    let btnLogout = document.getElementById("btn_logout");
+    btnLogout.onclick = () => {
+        sessionStorage.removeItem("login");
+        window.location.href = "login.html";
+    }
+}
+
 const conteudo = (elemento, html) => {
     elemento.innerHTML += html;
 }
 
 const header = (header) => {
     conteudo(header, `
-        <header class="navbar">
+        <header>
         <nav>
             <ul class="nav-menu">
                 <li><a href="../index.html">Home</a></li>
             </ul>
         </nav>
         <div class="login-info">
-            <p id="login-status">Logado com sucesso!</p>
             <button id="btn_logout">Logout</button>
         </div>
     </header>
@@ -21,16 +28,17 @@ const header = (header) => {
 
 const footer = (footer) => {
     conteudo(footer, `
-        <footer class="site-footer">
+        <footer>
         <div class="footer-content">
             <p>Desenvolvido por: Michel Lutegar D'Orsi Pereira</p>
             <p>Projeto de AP2 da disciplina de Desenvolvimento Web do IBMEC</p>
-            <p>Professor: Mangelo</p>
-            <img alt="Logo IBMEC" src="foto/ibmec.jpg" class="logo-ibmec">
+            <p>Professor: Eduardo Mangeli</p>
+            <img alt="Logo IBMEC" src="../img/ibmec.png" class="logo-ibmec">
         </div>
     </footer>
     `
     )
+    handleLogout();
 }
 
 const pegaDados = async (url) => {
@@ -72,14 +80,11 @@ const informacaoJogador = (card, jogador, tipo) => {
                         <li><strong>Altura:</strong> ${jogador.altura}</li>
                     </ul>
                 </div>
-                <div class="detalhes">
-                    <a href="${jogador.url_detalhes}" class="botao">Ver mais</a>
-                </div>
             </div> 
             `;
             } else {
                 card.innerHTML = `
-                    <main class="perfil-jogador">
+                    <div class="perfil-jogador">
         <div class="container">
             <div class="foto">
                 <img src="${jogador.imagem}" alt="${jogador.nome}">
@@ -95,7 +100,6 @@ const informacaoJogador = (card, jogador, tipo) => {
                         <li><strong>Nº Jogos:</strong> ${jogador.n_jogos}</li>
                         <li><strong>Nascimento:</strong> ${jogador.nascimento}</li>
                         <li><strong>Naturalidade:</strong> ${jogador.naturalidade}</li>
-                        <li><img src="img/naturalidade.png" alt="Naturalidade"></li>
                         <li><strong>Altura:</strong> ${jogador.altura}</li>
                         <li><strong>No Botafogo desde:</strong> ${jogador.no_botafogo_desde}</li>
                     </ul>
@@ -106,7 +110,7 @@ const informacaoJogador = (card, jogador, tipo) => {
                 </section>
             </div>
         </div>
-    </main>
+    </div>
     `;
     }
 

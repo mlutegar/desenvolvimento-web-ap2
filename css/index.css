@@ -59,12 +59,6 @@
     background-color: #0056b3;
 }
 
-.main-content {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
 h2 {
     text-align: center;
 }
@@ -85,16 +79,9 @@ h2 {
 
 .search-bar button {
     padding: 10px 15px;
-    border: 1px solid #007bff;
-    background-color: #007bff;
-    color: white;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.search-bar button:hover {
-    background-color: #0056b3;
 }
 
 .search-bar button i {
@@ -114,16 +101,9 @@ h2 {
 
 .filter-btn {
     padding: 10px 15px;
-    border: 1px solid #007bff;
-    background-color: #007bff;
-    color: white;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
-
-.filter-btn:hover {
-    background-color: #0056b3;
 }
 
 .filter-btn.selected {
@@ -141,4 +121,40 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+}
+
+/*Tela de não logado*/
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #ff0000;
+}
+
+#btn_login {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#btn_login:hover {
+    background-color: #333333;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }

@@ -24,20 +24,6 @@ input[type="password"] {
     box-sizing: border-box; /* Inclui padding e border na largura total */
 }
 
-button[type="submit"] {
-    background-color: #4CAF50; /* Cor verde */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 50%; /* Ocupa toda a largura do container */
-}
-
-button[type="submit"]:hover {
-    background-color: #45a049; /* Cor mais escura ao passar o mouse */
-}
-
 #error {
     color: red;
     margin-top: 10px;
