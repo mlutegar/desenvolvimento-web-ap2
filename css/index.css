@@ -5,7 +5,7 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
+    max-width: 250px;
 }
 
 .foto img {
@@ -146,11 +146,14 @@ h2 {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 20px;
+
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
+    /* O max-width está no style.css, em que o main tem o máximo 1200px*/
 
     p{
         text-align: center;
@@ -193,7 +196,17 @@ h1 {
     }
 }
 
+@media screen and (max-width: 1024px) {
+    #jogadores {
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
 @media screen and (max-width: 768px) {
+    #jogadores {
+        grid-template-columns: repeat(1, auto);
+    }
+
     .filters {
         display: none;
     }
