@@ -47,7 +47,7 @@
     display: inline-block;
     padding: 10px 16px;
     margin-top: 16px;
-    background-color: #007bff;
+    background-color: #555;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -56,7 +56,7 @@
 }
 
 .detalhes .botao:hover {
-    background-color: #0056b3;
+    background-color: #555;
 }
 
 h2 {
@@ -88,7 +88,7 @@ h2 {
         transition: background-color 0.3s;
 
         &:hover {
-            background-color: #004494;
+            background-color: #555;
         }
     }
 
@@ -116,8 +116,7 @@ h2 {
 }
 
 .filter-btn.selected {
-    background-color: #004494;
-    border-color: #004494;
+    background-color: #555;
 }
 
 #jogadores {

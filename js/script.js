@@ -101,7 +101,7 @@ const informacaoJogador = (card, jogador, tipo) => {
                     <ul>
                         <li><strong>Nº Jogos:</strong> ${jogador.n_jogos}</li>
                         <li><strong>Nascimento:</strong> ${jogador.nascimento}</li>
-                        <li><strong>Naturalidade:</strong> ${jogador.naturalidade}</li>
+                        <li><strong>Naturalidade:</strong> ${jogador.naturalidade}</li> 
                         <li><strong>Altura:</strong> ${jogador.altura}</li>
                         <li><strong>No Botafogo desde:</strong> ${jogador.no_botafogo_desde}</li>
                     </ul>

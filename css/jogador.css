@@ -72,3 +72,31 @@
 .detalhes p {
     font-size: 1.1em;
 }
+
+.btn-voltar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.botao {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #000; /* Cor preta */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.botao:hover {
+    background-color: #444; /* Cor cinza escuro */
+    transform: scale(1.05);
+}
+
+.botao:active {
+    background-color: #222; /* Cor cinza ainda mais escuro */
+    transform: scale(0.95);
+}
