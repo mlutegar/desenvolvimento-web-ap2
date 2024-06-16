@@ -1,4 +1,4 @@
-import {footer, header, informacaoJogador} from "./script.js";
+import {footer, header, informacaoJogador} from "/js/script.js";
 
 // FUNÇÕES
 
@@ -9,7 +9,7 @@ const montaCardDetalhe = (jogador) => {
     informacaoJogador(card, jogador, "jogador");
     card.innerHTML += `
     <div class="btn-voltar">
-        <a href="../index.html" class="botao">Voltar</a>
+        <a href="/index.html" class="botao">Voltar</a>
     </div>
     `
     return card;

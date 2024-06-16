@@ -15,8 +15,8 @@ const header = (header) => {
         <header>
         <nav>
             <ul class="nav-menu">
-                <img alt="Logo Botafogo" src="botafogo.png" class="logo-botafogo">
-                <li><a href="../index.html">Home</a></li>
+                <img alt="Logo Botafogo" src="/img/botafogo.png" class="logo-botafogo">
+                <li><a href="/index.html">Home</a></li>
             </ul>
         </nav>
         <div class="login-info">
@@ -34,9 +34,9 @@ const footer = (footer) => {
             <p>Desenvolvido por: Michel Lutegar D'Orsi Pereira</p>
             <p>Projeto de AP2 da disciplina de Desenvolvimento Web do IBMEC</p>
             <p>Professor: Eduardo Mangeli</p>
-            <img alt="Logo Botafogo" src="botafogo.png" class="logo-botafogo">
+            <img alt="Logo Botafogo" src="/img/botafogo.png" class="logo-botafogo">
             <span class="divisor"> | </span>
-            <img alt="Logo IBMEC" src="../img/ibmec.png" class="logo-ibmec">
+            <img alt="Logo IBMEC" src="/img/ibmec.png" class="logo-ibmec">
         </div>
     </footer>
     `

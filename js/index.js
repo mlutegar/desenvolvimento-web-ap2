@@ -1,4 +1,4 @@
-import { conteudo, pegaDados, informacaoJogador, header, footer } from "./script.js";
+import { conteudo, pegaDados, informacaoJogador, header, footer } from "/js/script.js";
 
 let body = document.body;
 let dadosJogadores = [];
@@ -51,7 +51,7 @@ const handleGetFem = () => {
 const handleCardClick = (evento) => {
     const card = evento.target.closest('article');
     console.log(card.dataset.nome);
-    window.location.href = `jogador.html?id=${card.dataset.id}`;
+    window.location.href = `detalhes.html?id=${card.dataset.id}`;
 }
 
 const montaCard = (jogador) => {
@@ -111,7 +111,7 @@ if (!sessionStorage.getItem("login")) {
 
         <div class="search-bar">
             <input id="search" type="search" placeholder="Buscar jogador" aria-label="Buscar jogador">
-            <button id="search-btn"><img class="img-search" src="../img/search.png"></button>
+            <button id="search-btn"><img class="img-search" src="/img/search.png"></button>
         </div>
 
         <section aria-labelledby="filter-heading" class="filters">
