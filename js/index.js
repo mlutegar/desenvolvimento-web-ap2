@@ -1,4 +1,4 @@
-import { conteudo, pegaDados, informacaoJogador, header, footer } from "/js/script.js";
+import { conteudo, pegaDados, informacaoJogador, header, footer } from "js/script.js";
 
 let body = document.body;
 let dadosJogadores = [];
@@ -14,7 +14,6 @@ const handleInputSearch = () => {
     let inputSearch = document.getElementById("search");
     inputSearch.oninput = () => {
         const searchValue = inputSearch.value.toLowerCase();
-        let jogadoresDiv = document.getElementById("jogadores");
 
         if (searchValue.length < 3 || searchValue === "") {
             addCards(dadosJogadores);
@@ -57,7 +56,7 @@ const handleCardClick = (evento) => {
 const montaCard = (jogador) => {
     const card = document.createElement('article');
     card.classList.add('card');
-    card.dataset.id = jogador.id; // Certifique-se de que o jogador tenha uma propriedade id
+    card.dataset.id = jogador.id; // Certifique-se de que o jogador tenha uma propriedade "id".
     card.onclick = handleCardClick;
 
     informacaoJogador(card, jogador, "index");
@@ -111,7 +110,7 @@ if (!sessionStorage.getItem("login")) {
 
         <div class="search-bar">
             <input id="search" type="search" placeholder="Buscar jogador" aria-label="Buscar jogador">
-            <button id="search-btn"><img class="img-search" src="/img/search.png"></button>
+            <button id="search-btn"><img class="img-search" src="/img/search.png" alt="search icon"></button>
         </div>
 
         <section aria-labelledby="filter-heading" class="filters">

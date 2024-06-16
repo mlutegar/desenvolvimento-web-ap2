@@ -50,6 +50,10 @@ const pegaDados = async (url) => {
 }
 
 const informacaoJogador = (card, jogador, tipo) => {
+    if (jogador.altura === "") {
+        jogador.altura = "Não informado";
+    }
+
     jogador = {
         id: jogador.id,
         url_detalhes: jogador.url_detalhes,
@@ -72,14 +76,13 @@ const informacaoJogador = (card, jogador, tipo) => {
             </div>
             <div class="conteudo">
                 <div class="importante">
-                    <h2>${jogador.nome}</h2>
+                    <h2>${jogador.nome.split(' ').slice(0, 2).join(' ')}</h2>
                     <p>${jogador.posicao}</p>
                 </div>
                 <div class="info">
                     <p><strong>Informações do jogador</strong></p>
                     <ul>
-                        <li><strong>Naturalidade:</strong> ${jogador.naturalidade}</li>
-                        <li><strong>Altura:</strong> ${jogador.altura}</li>
+                        <a href="\detalhes.html?id=${card.dataset.id}\"><li>Detalhes</li></a>
                     </ul>
                 </div>
             </div> 

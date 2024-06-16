@@ -1,4 +1,4 @@
-import {footer, header, informacaoJogador} from "/js/script.js";
+import {footer, header, informacaoJogador} from "js/script.js";
 
 // FUNÇÕES
 
@@ -52,4 +52,4 @@ const gerarPagina = async () => {
     footer(body);
 }
 
-gerarPagina();
+gerarPagina().then(() => console.log("Página de detalhes gerada"));
