@@ -1,4 +1,4 @@
-import {conteudo, pegaDados, informacaoJogador, header, footer} from "./script.js";
+import { conteudo, pegaDados, informacaoJogador, header, footer } from "./script.js";
 
 let body = document.body;
 let dadosJogadores = [];
@@ -13,55 +13,38 @@ const handleLogin = () => {
 const handleInputSearch = () => {
     let inputSearch = document.getElementById("search");
     inputSearch.oninput = () => {
-        console.log();
-        let jogadores = document.getElementById("jogadores");
-        jogadores.innerHTML = "Carregando...";
+        const searchValue = inputSearch.value.toLowerCase();
+        let jogadoresDiv = document.getElementById("jogadores");
 
-        let search = inputSearch.value;
-        let filteredData = dadosJogadores.filter(jogador => jogador.nome.toLowerCase().includes(search.toLowerCase()));
-        addCards(filteredData);
+        if (searchValue.length < 3 || searchValue === "") {
+            addCards(dadosJogadores);
+        } else {
+            const filteredData = dadosJogadores.filter(jogador =>
+                jogador.nome.toLowerCase().includes(searchValue)
+            );
+            addCards(filteredData);
+        }
     }
 }
 
 const handleGetAll = () => {
     let btnGetAll = document.getElementById("btn_get_all");
     btnGetAll.onclick = () => {
-        let jogadores = document.getElementById("jogadores");
-        jogadores.innerHTML = "Carregando...";
-
-        pegaDados("https://botafogo-atletas.mange.li/2024-1/all")
-            .then(data => {
-                dadosJogadores = data;
-                addCards()
-            })
+        loadJogadores("https://botafogo-atletas.mange.li/2024-1/all");
     }
 }
 
 const handleGetMasc = () => {
     let btnGetMasc = document.getElementById("btn_get_masc");
     btnGetMasc.onclick = () => {
-        let jogadores = document.getElementById("jogadores");
-        jogadores.innerHTML = "Carregando...";
-
-        pegaDados("https://botafogo-atletas.mange.li/2024-1/masculino")
-            .then(data => {
-                dadosJogadores = data;
-                addCards()
-            })
+        loadJogadores("https://botafogo-atletas.mange.li/2024-1/masculino");
     }
 }
 
 const handleGetFem = () => {
     let btnGetFem = document.getElementById("btn_get_fem");
     btnGetFem.onclick = () => {
-        let jogadores = document.getElementById("jogadores");
-        jogadores.innerHTML = "Carregando...";
-
-        pegaDados("https://botafogo-atletas.mange.li/2024-1/feminino")
-            .then(data => {
-                dadosJogadores = data;
-                addCards()
-            })
+        loadJogadores("https://botafogo-atletas.mange.li/2024-1/feminino");
     }
 }
 
@@ -74,6 +57,7 @@ const handleCardClick = (evento) => {
 const montaCard = (jogador) => {
     const card = document.createElement('article');
     card.classList.add('card');
+    card.dataset.id = jogador.id; // Certifique-se de que o jogador tenha uma propriedade id
     card.onclick = handleCardClick;
 
     informacaoJogador(card, jogador, "index");
@@ -81,10 +65,10 @@ const montaCard = (jogador) => {
     return card.outerHTML;
 }
 
-const addCards = () => {
+const addCards = (data) => {
     let jogadoresDiv = document.getElementById("jogadores");
     jogadoresDiv.innerHTML = "";
-    dadosJogadores.forEach(jogador => {
+    data.forEach(jogador => {
         const cardHTML = montaCard(jogador);
         jogadoresDiv.insertAdjacentHTML('beforeend', cardHTML);
     });
@@ -93,6 +77,17 @@ const addCards = () => {
     document.querySelectorAll('#jogadores article').forEach(card => {
         card.onclick = handleCardClick;
     });
+};
+
+const loadJogadores = (url) => {
+    let jogadoresDiv = document.getElementById("jogadores");
+    jogadoresDiv.innerHTML = "Carregando...";
+
+    pegaDados(url)
+        .then(data => {
+            dadosJogadores = data;
+            addCards(dadosJogadores);
+        });
 };
 
 if (!sessionStorage.getItem("login")) {
@@ -104,19 +99,19 @@ if (!sessionStorage.getItem("login")) {
             <p>Você não está logado. Por favor, faça login para acessar esta página.</p>
             <button id="btn_login">Login</button>
         </div>       
-</main>
-    `)
+        </main>
+    `);
     footer(body);
     handleLogin();
 } else {
     header(body);
     conteudo(body, `
-  <main> 
+      <main> 
         <h2>Jogadores</h2>
 
         <div class="search-bar">
             <input id="search" type="search" placeholder="Buscar jogador" aria-label="Buscar jogador">
-            <button id="search-btn"><i class="fa fa-search"></i></button>
+            <button id="search-btn"><img class="img-search" src="../img/search.png"></button>
         </div>
 
         <section aria-labelledby="filter-heading" class="filters">
@@ -127,10 +122,10 @@ if (!sessionStorage.getItem("login")) {
         </section>
 
         <div id="jogadores" role="region" aria-live="polite">
+            <p>Nada selecionado</p>
         </div> 
-    </main>
-    `
-    )
+      </main>
+    `);
     footer(body);
 
     const filterButtons = document.querySelectorAll('.filter-btn');

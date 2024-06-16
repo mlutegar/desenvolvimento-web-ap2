@@ -67,25 +67,34 @@ h2 {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-}
 
-.search-bar input {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    font-size: 1em;
-}
+    .img-search{
+        width: 10px;
+        height: auto;
+    }
 
-.search-bar button {
-    padding: 10px 15px;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
+    input {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px 0 0 4px;
+        font-size: 1em;
+    }
 
-.search-bar button i {
-    font-size: 1.2em;
+    button {
+        padding: 10px 15px;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #004494;
+        }
+    }
+
+    i {
+        font-size: 1.2em;
+    }
 }
 
 .filters {
@@ -121,6 +130,10 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+
+    p{
+        text-align: center;
+    }
 }
 
 /*Tela de não logado*/

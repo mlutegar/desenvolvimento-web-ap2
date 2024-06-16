@@ -1,5 +1,5 @@
 import { hex_sha256 } from "./sha256.js";
-import {conteudo, handleLogout} from "./script.js";
+import {conteudo} from "./script.js";
 
 const password = "SENHA123";
 const password_hash = hex_sha256(password);
