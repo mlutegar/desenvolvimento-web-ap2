@@ -1,4 +1,4 @@
-import { conteudo, pegaDados, informacaoJogador, header, footer } from "js/script.js";
+import { conteudo, pegaDados, informacaoJogador, header, footer } from "./script.js";
 
 let body = document.body;
 let dadosJogadores = [];

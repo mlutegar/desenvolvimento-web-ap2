@@ -1,4 +1,4 @@
-import {footer, header, informacaoJogador} from "js/script.js";
+import {footer, header, informacaoJogador} from "./script.js";
 
 // FUNÇÕES
 
