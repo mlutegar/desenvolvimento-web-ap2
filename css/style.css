@@ -57,8 +57,7 @@ header {
     }
 
     .login-info p {
-        margin: 0;
-        margin-right: 20px;
+        margin: 0 20px 0 0;
     }
 
     .login-info button {
@@ -143,14 +142,60 @@ button[type="submit"] {
 @media (max-width: 768px) {
     header {
         flex-direction: column;
+        padding: 10px;
 
         .nav-menu {
-            margin-top: 20px;
-            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+            width: 100%;
+
+            .logo-botafogo{
+                margin-right: 0;
+            }
+        }
+
+        .nav-menu li {
+            display: none;
         }
 
         .login-info {
-            margin-top: 20px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-info p {
+            margin: 5px 0;
+        }
+
+        .login-info button {
+            margin-top: 10px;
+            width: 100%;
+            max-width: 200px;
+        }
+    }
+
+    main {
+        padding: 10px;
+        margin: 0;
+    }
+
+    footer {
+        padding: 10px 0;
+
+        .footer-content {
+            padding: 10px;
+        }
+
+        .footer-content p {
+            font-size: 0.9em;
+        }
+
+        .footer-logos .divisor {
+            margin: 0 5px;
         }
     }
 }
