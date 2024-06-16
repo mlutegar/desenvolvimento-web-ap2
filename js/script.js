@@ -15,7 +15,7 @@ const header = (header) => {
         <header>
         <nav>
             <ul class="nav-menu">
-                <img alt="Logo Botafogo" src="/img/botafogo.png" class="logo-botafogo">
+                <img alt="Logo Botafogo" src="../img/botafogo.png" class="logo-botafogo">
                 <li><a href="/index.html">Home</a></li>
             </ul>
         </nav>
@@ -41,7 +41,6 @@ const footer = (footer) => {
     </footer>
     `
     )
-    handleLogout();
 }
 
 const pegaDados = async (url) => {
@@ -136,4 +135,4 @@ const informacaoJogador = (card, jogador, tipo) => {
 }
 
 
-export { conteudo, pegaDados, informacaoJogador, footer, header };
+export { conteudo, pegaDados, informacaoJogador, footer, header, handleLogout };

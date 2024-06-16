@@ -1,14 +1,7 @@
-import { conteudo, pegaDados, informacaoJogador, header, footer } from "./script.js";
+import {conteudo, pegaDados, informacaoJogador, header, footer, handleLogout} from "./script.js";
 
 let body = document.body;
 let dadosJogadores = [];
-
-const handleLogin = () => {
-    let btnLogin = document.getElementById("btn_login");
-    btnLogin.onclick = () => {
-        window.location.href = "login.html";
-    }
-}
 
 const handleInputSearch = () => {
     let inputSearch = document.getElementById("search");
@@ -96,12 +89,11 @@ if (!sessionStorage.getItem("login")) {
         <div class="container">
             <h1>Aviso!</h1>
             <p>Você não está logado. Por favor, faça login para acessar esta página.</p>
-            <button id="btn_login">Login</button>
+            <button id="btn_login" onclick="(window.location.href = 'login.html')">Fazer login</button>
         </div>       
         </main>
     `);
     footer(body);
-    handleLogin();
 } else {
     header(body);
     conteudo(body, `
@@ -160,4 +152,5 @@ if (!sessionStorage.getItem("login")) {
     handleGetAll();
     handleGetMasc();
     handleGetFem();
+    handleLogout();
 }
