@@ -100,3 +100,54 @@
     background-color: #222; /* Cor cinza ainda mais escuro */
     transform: scale(0.95);
 }
+
+@media screen and (max-width: 768px) {
+    .perfil-jogador .container {
+        flex-direction: column;
+    }
+
+    .foto {
+        padding: 10px;
+    }
+
+    .foto img {
+        max-width: 200px;
+    }
+
+    .conteudo {
+        padding: 10px;
+    }
+
+    .informacoes-principais h1 {
+        font-size: 2em;
+    }
+
+    .informacoes-principais .posicao {
+        font-size: 1em;
+    }
+
+    .informacoes-jogador h2 {
+        font-size: 1.5em;
+    }
+
+    .informacoes-jogador ul li {
+        font-size: 1em;
+    }
+
+    .detalhes h2 {
+        font-size: 1.5em;
+    }
+
+    .detalhes p {
+        font-size: 1em;
+    }
+
+    .btn-voltar {
+        margin-top: 10px;
+    }
+
+    .botao {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}

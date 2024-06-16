@@ -120,6 +120,15 @@ if (!sessionStorage.getItem("login")) {
             <button id="btn_get_masc" class="filter-btn">Masculino</button>
             <button id="btn_get_fem" class="filter-btn">Feminino</button>
         </section>
+        
+        <section aria-labelledby="filter-heading" class="filters-mobile">
+            <h3 id="filter-heading">Categorias</h3>
+            <select id="filter-select">
+                <option value="all">Todos</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+            </select>
+        </section>
 
         <div id="jogadores" role="region" aria-live="polite">
             <p>Nada selecionado</p>
@@ -134,6 +143,18 @@ if (!sessionStorage.getItem("login")) {
             filterButtons.forEach(btn => btn.classList.remove('selected'));
             this.classList.add('selected');
         });
+    });
+
+    const filterButtonsMobile = document.getElementById('filter-select');
+    filterButtonsMobile.addEventListener('change', function() {
+        const selectedValue = this.value;
+        if (selectedValue === 'all') {
+            loadJogadores("https://botafogo-atletas.mange.li/2024-1/all");
+        } else if (selectedValue === 'masculino') {
+            loadJogadores("https://botafogo-atletas.mange.li/2024-1/masculino");
+        } else if (selectedValue === 'feminino') {
+            loadJogadores("https://botafogo-atletas.mange.li/2024-1/feminino");
+        }
     });
 
     handleInputSearch();

@@ -102,21 +102,43 @@ h2 {
     justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
+
+    h3 {
+        margin-right: 20px;
+    }
+
+    .filter-btn {
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .filter-btn.selected {
+        background-color: #555;
+    }
 }
 
-.filters h3 {
-    margin-right: 20px;
-}
+.filters-mobile {
+    display: none;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
 
-.filter-btn {
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
+    h3 {
+        margin-right: 20px;
+    }
 
-.filter-btn.selected {
-    background-color: #555;
+    .filter-btn {
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .filter-btn.selected {
+        background-color: #555;
+    }
 }
 
 #jogadores {
@@ -168,5 +190,15 @@ h1 {
     }
     to {
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .filters {
+        display: none;
+    }
+
+    .filters-mobile {
+        display: flex;
     }
 }

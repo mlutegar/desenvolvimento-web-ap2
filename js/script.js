@@ -20,7 +20,7 @@ const header = (header) => {
             </ul>
         </nav>
         <div class="login-info">
-            <button id="btn_logout">Logout</button>
+            <button id="btn_logout">Sair da conta</button>
         </div>
     </header>
     `
