@@ -31,6 +31,10 @@ input[type="password"] {
 
 @media (max-width: 768px) {
     input[type="password"] {
-        width: 100%;
+        width: 80%;
+    }
+
+    button[type="submit"] {
+        width: 80%;
     }
 }
