@@ -102,7 +102,7 @@ if (!sessionStorage.getItem("login")) {
 
         <div class="search-bar">
             <input id="search" type="search" placeholder="Buscar jogador" aria-label="Buscar jogador">
-            <button id="search-btn"><img class="img-search" src="/img/search.png" alt="search icon"></button>
+            <button id="search-btn"><img class="img-search" src="img/search.png" alt="search icon"></button>
         </div>
 
         <section aria-labelledby="filter-heading" class="filters">
