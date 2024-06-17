@@ -42,18 +42,18 @@
         margin: 0;
 
         a{
-            display: block; /* Torna o link um bloco */
-            text-decoration: none; /* Remove sublinhado */
-            color: #ffffff; /* Cor do link */
+            display: block;
+            text-decoration: none;
+            color: #ffffff;
             background-color: #555;
-            padding: 10px; /* Espaçamento interno */
-            border-radius: 4px; /* Bordas arredondadas */
-            transition: background-color 0.3s, color 0.3s; /* Transições suaves */
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
             text-align: center;
 
             &:hover {
                 background-color: #555;
-                color: white; /* Cor do texto ao passar o mouse */
+                color: white;
             }
         }
 
@@ -212,6 +212,8 @@ h1 {
         opacity: 1;
     }
 }
+
+/*MEDIAS QUERY*/
 
 @media screen and (max-width: 1024px) {
     #jogadores {

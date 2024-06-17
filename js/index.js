@@ -115,6 +115,7 @@ if (!sessionStorage.getItem("login")) {
         <section aria-labelledby="filter-heading" class="filters-mobile">
             <h3 id="filter-heading">Categorias</h3>
             <select id="filter-select">
+                <option value="" selected disabled hidden>Selecione uma opção</option>
                 <option value="all">Todos</option>
                 <option value="masculino">Masculino</option>
                 <option value="feminino">Feminino</option>

@@ -1,7 +1,7 @@
 /*CSS DIVS*/
 
 body {
-    font-family: inter, sans-serif;
+    font-family: "Inter", sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -138,6 +138,8 @@ button[type="submit"] {
     cursor: pointer;
     width: 50%;
 }
+
+/*MEDIAS QUERY*/
 
 @media (max-width: 768px) {
     header {
